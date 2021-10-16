@@ -1,0 +1,9 @@
+function [pic,pic_boundary]=atlas_add_boundary(pic)
+pic=double(pic);
+pic_boundary=zeros(size(pic));
+pic_boundary(2:end-1,2:end-1)=abs(pic(2:end-1,2:end-1)-pic(1:end-2,2:end-1))+...
+    abs(pic(2:end-1,2:end-1)-pic(2:end-1,1:end-2))+...
+    abs(pic(2:end-1,2:end-1)-pic(3:end,2:end-1))+...
+    abs(pic(2:end-1,2:end-1)-pic(2:end-1,3:end))~=0;
+%pic_boundary(pic(:,570)~=0,570:571)=1;
+pic=uint16(pic+pic_boundary*256*256);
