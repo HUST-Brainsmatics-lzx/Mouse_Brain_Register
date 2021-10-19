@@ -1,7 +1,4 @@
 %clear;close all;clc;
-if year(now)~=2021
-    return
-end
 %% Basic
 figure('Name','Image Processor','NumberTitle','off','Menubar','figure','Resize','off',......
     'Units','Normalized','Position',[0.025,0.0380,0.95,0.8824],'Color',[0.8,0.8,0.8],'ColorMap',gray(256));
